@@ -1,0 +1,32 @@
+{
+  "development": {
+    "main": {
+      "adapter": "postgres",
+      "host": "localhost",
+      "port": "5432",
+      "user": "melamenu",
+      "password": "1234",
+      "database": "melamenu_server_development"
+    }
+  },
+  "test": {
+    "main": {
+      "adapter": "postgres",
+      "host": "localhost",
+      "port": "5432",
+      "user": "postgres",
+      "password": "",
+      "database": "melamenu_server_test"
+    }
+  },
+  "production": {
+    "main": {
+      "adapter": "postgres",
+      "host": "localhost",
+      "port": "5432",
+      "user": "melamenu",
+      "password": "1234",
+      "database": "melamenu_server_production"
+    }
+  }
+}

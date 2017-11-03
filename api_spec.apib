@@ -1,0 +1,1056 @@
+FORMAT: 1A
+HOST: https://melamenu.com/api
+
+# Melamenu
+
+Melamenu server
+
+## Get avarage price [/average_price]
+
+### Send client order to get average price [POST]
+
++ Request (application/json)
+
+        {
+          "client_order": [
+            { "id": 1, "count": 1 },
+            { "id": 3, "count": 2 }
+          ]
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "meta": {
+                "total": 1,
+                "count": 1,
+                "offset": 0,
+                "error": null
+            },
+            "data": [
+                {
+                    "price": 1200
+                }
+            ]
+        }
+
+## Pin code [/check_pin]
+
+### Validate pin code [GET /check_pin/{offer_id}?pin_code={pin_code}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "ok": true
+            }
+          ]
+        }
+
+## Cities [/cities]
+
+### Get all cities [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 2,
+            "count": 2,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "name": "Астана",
+              "created_at": "2016-12-28T11:14:56.856Z",
+              "updated_at": "2016-12-28T11:14:56.856Z"
+            },
+            {
+              "id": 2,
+              "name": "Алматы",
+              "created_at": "2016-12-28T11:14:56.856Z",
+              "updated_at": "2016-12-28T11:14:56.856Z"
+            }
+          ]
+        }
+
+### Get specific [GET /cities/{id}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "name": "Астана",
+              "created_at": "2016-12-28T11:14:56.856Z",
+              "updated_at": "2016-12-28T11:14:56.856Z"
+            }
+          ]
+        }
+
+## Categories [/categories]
+
+### Get all categories [GET]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 4,
+            "count": 4,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "name": "Суши",
+              "avatar": null,
+              "parent_id": null,
+              "created_at": "2016-12-28T11:14:56.856Z",
+              "updated_at": "2016-12-28T11:14:56.856Z"
+            },
+            {
+              "id": 2,
+              "name": "Роллы",
+              "avatar": null,
+              "parent_id": null,
+              "created_at": "2016-12-28T11:14:56.857Z",
+              "updated_at": "2016-12-28T11:14:56.857Z"
+            },
+            {
+              "id": 3,
+              "name": "Гунканы",
+              "avatar": null,
+              "parent_id": null,
+              "created_at": "2016-12-28T11:14:56.857Z",
+              "updated_at": "2016-12-28T11:14:56.857Z"
+            },
+            {
+              "id": 4,
+              "name": "Пицца",
+              "avatar": null,
+              "parent_id": null,
+              "created_at": "2016-12-28T11:14:56.857Z",
+              "updated_at": "2016-12-28T11:14:56.857Z"
+            }
+          ]
+        }
+
+### Get specific [GET /categories/{id}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "name": "Суши",
+              "avatar": null,
+              "parent_id": null,
+              "created_at": "2016-12-28T11:14:56.856Z",
+              "updated_at": "2016-12-28T11:14:56.856Z"
+            }
+          ]
+        }
+
+## Dishes [/dishes]
+
+### Get all dishes for specific category [GET /dishes/{id}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 5,
+              "name": "Суши",
+              "avatar": null,
+              "parent_id": 1,
+              "created_at": "2016-12-28T12:53:41.456Z",
+              "updated_at": "2016-12-28T12:53:41.456Z",
+              "dishes": [
+                {
+                  "id": 1,
+                  "name": "С угрем",
+                  "description": null,
+                  "avatar": null,
+                  "category_id": 5,
+                  "created_at": "2016-12-28T12:53:41.463Z",
+                  "updated_at": "2016-12-28T12:53:41.463Z"
+                },
+                {
+                  "id": 2,
+                  "name": "С тунцом",
+                  "description": null,
+                  "avatar": null,
+                  "category_id": 5,
+                  "created_at": "2016-12-28T12:53:41.464Z",
+                  "updated_at": "2016-12-28T12:53:41.464Z"
+                },
+                {
+                  "id": 3,
+                  "name": "С лососем",
+                  "description": null,
+                  "avatar": null,
+                  "category_id": 5,
+                  "created_at": "2016-12-28T12:53:41.464Z",
+                  "updated_at": "2016-12-28T12:53:41.464Z"
+                },
+                {
+                  "id": 4,
+                  "name": "С креветкой",
+                  "description": null,
+                  "avatar": null,
+                  "category_id": 5,
+                  "created_at": "2016-12-28T12:53:41.464Z",
+                  "updated_at": "2016-12-28T12:53:41.464Z"
+                },
+                {
+                  "id": 5,
+                  "name": "С копченым лососем",
+                  "description": null,
+                  "avatar": null,
+                  "category_id": 5,
+                  "created_at": "2016-12-28T12:53:41.464Z",
+                  "updated_at": "2016-12-28T12:53:41.464Z"
+                }
+              ]
+            }
+          ]
+        }
+
+## Orders [/orders]
+
+### Get specific order [GET /orders/{hash}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 2,
+              "hash": "6d103347e156b74a77ed553aa490a469",
+              "client_name": null,
+              "client_phone": null,
+              "client_address": "улица Академика Пилюгина 44",
+              "payment_method": "card",
+              "client_order": [
+                { "id": 1, "count": 1 },
+                { "id": 4, "count": 4 },
+                { "id": 2, "count": 2 }
+              ],
+              "comment": "Test 123123123",
+              "date": "2017-01-24T12:41:33.875Z",
+              "active": true,
+              "delivered": false,
+              "created_at": "2017-01-24T12:41:33.872Z",
+              "updated_at": "2017-01-24T12:41:33.875Z",
+              "expired": false,
+              "city_id": 1,
+              "offers": [
+                {
+                  "id": 2,
+                  "restaurant_id": 1,
+                  "order_id": 2,
+                  "amount": null,
+                  "delivery_time": null,
+                  "comment": null,
+                  "created_at": "2017-01-24T13:12:36.020Z",
+                  "updated_at": "2017-01-24T13:12:36.022Z",
+                  "restaurant": {
+                    "id": 1,
+                    "name": "Великолепие суккуба",
+                    "phone": "+7111111111",
+                    "description": "Пуэрториканские изыски в домашней обстановке",
+                    "address": "г.Москва, ул.Пуэрториканская, д. 2",
+                    "website": "http://sukkub-masters.ru",
+                    "admin_id": 2,
+                    "avatar": "1123",
+                    "created_at": "2017-01-23T14:05:51.959Z",
+                    "updated_at": "2017-01-23T14:05:51.960Z"
+                  }
+                },
+                {
+                  "id": 3,
+                  "restaurant_id": 1,
+                  "order_id": 2,
+                  "amount": 123,
+                  "delivery_time": "00:22:00",
+                  "comment": null,
+                  "created_at": "2017-01-24T13:19:53.253Z",
+                  "updated_at": "2017-01-24T13:19:53.254Z",
+                  "restaurant": {
+                    "id": 1,
+                    "name": "Великолепие суккуба",
+                    "phone": "+7111111111",
+                    "description": "Пуэрториканские изыски в домашней обстановке",
+                    "address": "г.Москва, ул.Пуэрториканская, д. 2",
+                    "website": "http://sukkub-masters.ru",
+                    "admin_id": 2,
+                    "avatar": "1123",
+                    "created_at": "2017-01-23T14:05:51.959Z",
+                    "updated_at": "2017-01-23T14:05:51.960Z"
+                  }
+                },
+                {
+                  "id": 4,
+                  "restaurant_id": 1,
+                  "order_id": 2,
+                  "amount": 123,
+                  "delivery_time": "14:22:00",
+                  "comment": null,
+                  "created_at": "2017-01-24T13:20:01.968Z",
+                  "updated_at": "2017-01-24T13:20:01.969Z",
+                  "restaurant": {
+                    "id": 1,
+                    "name": "Великолепие суккуба",
+                    "phone": "+7111111111",
+                    "description": "Пуэрториканские изыски в домашней обстановке",
+                    "address": "г.Москва, ул.Пуэрториканская, д. 2",
+                    "website": "http://sukkub-masters.ru",
+                    "admin_id": 2,
+                    "avatar": "1123",
+                    "created_at": "2017-01-23T14:05:51.959Z",
+                    "updated_at": "2017-01-23T14:05:51.960Z"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+
+### Delete specific order [DELETE /orders/{hash}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "hash": "a9e39983f6ef87a50a0b6cff041357a7",
+              "client_name": null,
+              "client_phone": null,
+              "client_address": "улица Академика Пилюгина 44",
+              "payment_method": "card",
+              "client_order": [
+                { "id": 1, "count": 1 },
+                { "id": 4, "count": 4 },
+                { "id": 2, "count": 2 }
+              ],
+              "comment": "Test 123123123",
+              "date": "2017-01-24T14:22:55.325Z",
+              "active": true,
+              "delivered": false,
+              "created_at": "2017-01-24T14:22:55.324Z",
+              "updated_at": "2017-01-24T14:22:55.325Z",
+              "expired": false,
+              "city_id": 1,
+            }
+          ]
+        }
+
+### Update order by hash [PUT /orders/{hash}]
+
++ Request (application/json)
+
+        {
+          "client_name": "Православный что-то там",
+          "client_phone": "Православный что-то там",
+          "card_hash": "B4D4563622D22B2EBD10407A46AC748828CC5061FA339669FA5E11BE1555918EC42F7E652B6ED5159D80679B7E0B568E05EBE5D1B0138D0040A8E3A59E0BDF3D"
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 2,
+              "hash": "2f0b941e8b774fa56d15eb5e1674bb58",
+              "client_name": "Православный что-то там",
+              "client_phone": "Православный что-то там",
+              "client_address": "улица Академика Пилюгина 44",
+              "payment_method": "card",
+              "client_order": [
+                { "id": 1, "count": 1 },
+                { "id": 4, "count": 4 },
+                { "id": 2, "count": 2 }
+              ],
+              "comment": "Test 123123123",
+              "date": "2017-01-24T15:07:44.176Z",
+              "active": true,
+              "delivered": false,
+              "created_at": "2017-01-24T15:07:44.173Z",
+              "updated_at": "2017-01-24T15:09:49.407Z",
+              "expired": false,
+              "city_id": 2
+            }
+          ]
+        }
+
+### Create new order [POST]
+
++ Request (application/json)
+
+        {
+          "comment": "Test 123123123",
+          "push_token": "876asd7a87as8710239871237a7s6dd",
+          "client_address": "улица Академика Пилюгина 44",
+          "city_id": 1,
+          "payment_method": "card",
+          "client_order": [
+            { "id": 1, "count": 1 },
+            { "id": 4, "count": 4 },
+            { "id": 2, "count": 2 }
+          ]
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "hash": "81b03f23d2d04bf69b24db8fc27106e5",
+              "client_name": null,
+              "client_phone": null,
+              "client_address": "улица Академика Пилюгина 44",
+              "payment_method": "card",
+              "client_order": [
+                { "id": 1, "count": 1 },
+                { "id": 4, "count": 4 },
+                { "id": 2, "count": 2 }
+              ],
+              "comment": "Test 123123123",
+              "date": "2016-12-28T16:00:19.902Z",
+              "active": true,
+              "delivered": false,
+              "created_at": "2016-12-28T16:00:19.899Z",
+              "updated_at": "2016-12-28T16:00:19.902Z",
+              "expired": false,
+              "city_id": 1
+            }
+          ]
+        }
+
+## Offers [/offers]
+
+### Get offer by order hash [GET /offers/{hash}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 6,
+              "restaurant_id": 2,
+              "order_id": 8,
+              "amount": 2222222,
+              "delivery_time": "00:10:00",
+              "delivery_date": null,
+              "comment": "💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 ",
+              "pin_code": 4844,
+              "approved": true,
+              "created_at": "2017-01-30T16:27:46.380Z",
+              "updated_at": "2017-01-30T16:28:31.447Z",
+              "restaurant": {
+                "id": 2,
+                "name": "Сальмонелла",
+                "phone": "+7111111111",
+                "description": "Вот уж обрадуетесь здешней кухне. Уютно, пахнет бактериями и пирожками с грибками.",
+                "address": "г.Москва, ул.Пуэрториканская, д. 2",
+                "website": "http://yandex.ru",
+                "admin_id": 2,
+                "avatar": "1123",
+                "created_at": "2017-01-30T15:18:35.183Z",
+                "updated_at": "2017-01-30T15:28:20.345Z"
+              }
+            }
+          ]
+        }
+
+### Approve offer [PUT /offers/{id}]
+
++ Request ApproveCashPayedOffer (application/json)
+
+        {
+          "hash": "a9e39983f6ef87a50a0b6cff041357a7"
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "token": "B4D4563622D22B2EBD10407A46AC748828CC5061FA33966",
+              "id": 1,
+              "restaurant_id": 1,
+              "order_id": 1,
+              "amount": 123,
+              "delivery_time": "14:22:00",
+              "comment": null,
+              "approved": true,
+              "created_at": "2017-01-24T14:23:44.087Z",
+              "updated_at": "2017-01-24T14:45:51.772Z"
+            }
+          ]
+        }
+
++ Request ApproveCardPayedOfferWithCryptoNo3ds (application/json)
+
+        {
+          "hash": "a9e39983f6ef87a50a0b6cff041357a7",
+          "cryptogram": "MWNmYWUwYzk0MjQwODc1ZmVmMzUwYzc5OTBiNzU3ZWViNDk2M2M2YjM0NjcyMWU1YTEyMmFiODMzNzYzYjkxNTFjZmFlMGM5NDI0MDg3NWZlZjM1MGM3OTkwYjc1N2VlYjQ5NjNjNmIzNDY3MjFlNWExMjJhYjgzMzc2M2I5MTU="
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "restaurant_id": 1,
+              "order_id": 1,
+              "amount": 123,
+              "delivery_time": "14:22:00",
+              "comment": null,
+              "approved": true,
+              "created_at": "2017-01-24T14:23:44.087Z",
+              "updated_at": "2017-01-24T14:45:51.772Z"
+            }
+          ]
+        }
+
++ Request ApproveCardPayedOfferWithCryptoWith3ds (application/json)
+
+        {
+          "hash": "a9e39983f6ef87a50a0b6cff041357a7",
+          "cryptogram": "MWNmYWUwYzk0MjQwODc1ZmVmMzUwYzc5OTBiNzU3ZWViNDk2M2M2YjM0NjcyMWU1YTEyMmFiODMzNzYzYjkxNTFjZmFlMGM5NDI0MDg3NWZlZjM1MGM3OTkwYjc1N2VlYjQ5NjNjNmIzNDY3MjFlNWExMjJhYjgzMzc2M2I5MTU="
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta" : {
+            "count" : 1,
+            "offset" : 0,
+            "total" : 1,
+            "error" : null
+          },
+          "data" : [
+            {
+              "PaReq" : "+\/eyJNZXJjaGFudE5hbWUiOm51bGwsIkZpcnN0U2l4IjoiNDI0MjQyIiwiTGFzdEZvdXIiOiI0MjQyIiwiQW1vdW50IjoxLjAsIkN1cnJlbmN5Q29kZSI6IktaVCIsIkRhdGUiOiIyMDE3LTA5LTE0VDAwOjAwOjAwKzAzOjAwIiwiQ3VzdG9tZXJOYW1lIjpudWxsLCJDdWx0dXJlTmFtZSI6InJ1LVJVIn0=",
+              "TermUrl" : "https://test.melamenu.com/api/payment_result/{offerId}/{orderHash}",
+              "3d" : true,
+              "MD" : 20211708,
+              "AcsUrl" : "https://demo.cloudpayments.ru/acs"
+            }
+          ]
+        }
+
++ Request ApproveCardPayedOfferWithTokenNo3ds (application/json)
+
+        {
+          "hash": "a9e39983f6ef87a50a0b6cff041357a7",
+          "token": "B4D4563622D22B2EBD10407A46AC748828CC5061FA33966"
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 1,
+              "restaurant_id": 1,
+              "order_id": 1,
+              "amount": 123,
+              "delivery_time": "14:22:00",
+              "comment": null,
+              "approved": true,
+              "created_at": "2017-01-24T14:23:44.087Z",
+              "updated_at": "2017-01-24T14:45:51.772Z"
+            }
+          ]
+        }
+
++ Request ApproveCardPayedOfferWithTokenWith3ds (application/json)
+
+        {
+          "hash": "a9e39983f6ef87a50a0b6cff041357a7",
+          "token": "B4D4563622D22B2EBD10407A46AC748828CC5061FA33966"
+        }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta" : {
+            "count" : 1,
+            "offset" : 0,
+            "total" : 1,
+            "error" : null
+          },
+          "data" : [
+            {
+              "PaReq" : "+\/eyJNZXJjaGFudE5hbWUiOm51bGwsIkZpcnN0U2l4IjoiNDI0MjQyIiwiTGFzdEZvdXIiOiI0MjQyIiwiQW1vdW50IjoxLjAsIkN1cnJlbmN5Q29kZSI6IktaVCIsIkRhdGUiOiIyMDE3LTA5LTE0VDAwOjAwOjAwKzAzOjAwIiwiQ3VzdG9tZXJOYW1lIjpudWxsLCJDdWx0dXJlTmFtZSI6InJ1LVJVIn0=",
+              "TermUrl" : "https://test.melamenu.com/api/payment_result/{offerId}/{orderHash}",
+              "3d" : true,
+              "MD" : 20211708,
+              "AcsUrl" : "https://demo.cloudpayments.ru/acs"
+            }
+          ]
+        }
+
+
+
+### Create new offer [POST /offers/{order_hash}]
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Bearer {access_token}
+    + Body
+
+            {
+              "amount": "123",
+              "delivery_time": "14:22",
+              "comment": "tset me plz"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 3,
+              "restaurant_id": 1,
+              "order_id": 1,
+              "amount": 123,
+              "delivery_time": "14:22:00",
+              "comment": "tset me plz",
+              "approved": false,
+              "created_at": "2017-01-24T14:24:43.479Z",
+              "updated_at": "2017-01-24T14:24:43.484Z"
+            }
+          ]
+        }
+
+## Checkout [/checkout]
+
+### Checkout order [POST /checkout/{offer_id}?pin_code={pin_code}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "id": 6,
+              "restaurant_id": 2,
+              "order_id": 8,
+              "amount": 2222222,
+              "delivery_time": "00:10:00",
+              "delivery_date": null,
+              "comment": "💩 👻 💀 ☠️ 👽 👾 🤖 🎃 😺 😸 😹 ",
+              "pin_code": 4844,
+              "approved": true,
+              "total": 1292.42,
+              "discount": 223.12,
+              "created_at": "2017-01-30T16:27:46.380Z",
+              "updated_at": "2017-01-30T16:28:31.447Z",
+            }
+          ]
+        }
+
+## Client verification [/client]
+
+### Get client info [GET]
+
++ Request (application/json)
+    + Headers
+
+            Authorization: Bearer {client_hash}
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "verified": true,
+              "number": "7916111111",
+              "token": "1cfae0c94240875fef350c7990b757eeb4963c6b346721e5a122ab833763b915",
+              "name": "Vasiliy Ostrovsky",
+              "cards": [
+                {
+                  "card_id": 331,
+                  "digits": 1234
+                }
+              ]
+            }
+          ]
+        }
+
+### Send verification message to client number [POST]
+
++ Request (application/json)
+    + Body
+
+            {
+              "number": "7916111111"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "number": "7916111111",
+              "verified": false
+            }
+          ]
+        }
+
+### Send verification code [PUT]
+
++ Request (application/json)
+    + Body
+
+            {
+              "number": "7916111111",
+              "code": 1234
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "token": "1cfae0c94240875fef350c7990b757eeb4963c6b346721e5a122ab833763b915",
+              "number": "7916111111",
+              "verified": true
+            }
+          ]
+        }
+
+
+## Payment result [/payment_result/{offerId}/{orderHash}]
+
+### Initial 3ds endpoint (redirect from cloudpayments)  [POST]
+
++ Request PaymentApproved (application/json)
+    + Body
+
+            {
+                "MD": "504",
+                "PaRes": "something"
+            }
+
++ Response 308
+    + Headers
+
+            Location: https://test.melamenu.com/payment_result/{offerId}/{orderHash}/success?token={token}
+
++ Request PaymentDeclined  (application/json)
+
+    + Body
+
+            {
+                "MD": "504",
+                "PaRes": "something"
+            }
+
++ Response 308
+    + Headers
+
+            Location: https://test.melamenu.com/payment_result/{offerId}/{orderHash}/fail
+
+
+### Fail 3ds endpoint (redirect from initial endpoint)  [GET /payment_result/{offerId}/{orderHash}/fail]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "valid": false
+            }
+          ]
+        }
+
+### Success 3ds endpoint (redirect from initial endpoint)  [GET /payment_result/{offerId}/{orderHash}/success]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "valid": true,
+              "token": "B4D4563622D22B2EBD10407A46AC748828CC5061FA33966"
+            }
+          ]
+        }
+
+## Working with cards [/cards]
+
+### Add new card  [POST]
+
++ Request CardWithNo3ds (application/json)
+    + Body
+
+            {
+              "cryptogram": "MWNmYWUwYzk0MjQwODc1ZmVmMzUwYzc5OTBiNzU3ZWViNDk2M2M2YjM0NjcyMWU1YTEyMmFiODMzNzYzYjkxNTFjZmFlMGM5NDI0MDg3NWZlZjM1MGM3OTkwYjc1N2VlYjQ5NjNjNmIzNDY3MjFlNWExMjJhYjgzMzc2M2I5MTU="
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "valid": true,
+              "token": "B4D4563622D22B2EBD10407A46AC748828CC5061FA33966"
+            }
+          ]
+        }
+
++ Request CardWith3ds (application/json)
+    + Body
+
+            {
+              "cryptogram": "MWNmYWUwYzk0MjQwODc1ZmVmMzUwYzc5OTBiNzU3ZWViNDk2M2M2YjM0NjcyMWU1YTEyMmFiODMzNzYzYjkxNTFjZmFlMGM5NDI0MDg3NWZlZjM1MGM3OTkwYjc1N2VlYjQ5NjNjNmIzNDY3MjFlNWExMjJhYjgzMzc2M2I5MTU="
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta" : {
+            "count" : 1,
+            "offset" : 0,
+            "total" : 1,
+            "error" : null
+          },
+          "data" : [
+            {
+              "PaReq" : "+/eyJNZXJjaGFudE5hbWUiOm51bGwsIkZpcnN0U2l4IjoiNDI0MjQyIiwiTGFzdEZvdXIiOiI0MjQyIiwiQW1vdW50IjoxLjAsIkN1cnJlbmN5Q29kZSI6IktaVCIsIkRhdGUiOiIyMDE3LTA5LTE0VDAwOjAwOjAwKzAzOjAwIiwiQ3VzdG9tZXJOYW1lIjpudWxsLCJDdWx0dXJlTmFtZSI6InJ1LVJVIn0=",
+              "TermUrl" : "https://test.melamenu.com/api/cards?authorize3ds=true",
+              "3d" : true,
+              "MD" : 20211708,
+              "AcsUrl" : "https://demo.cloudpayments.ru/acs"
+            }
+          ]
+        }
+
+### Initial 3ds endpoint (redirect from cloudpayments)  [POST /cards?authorize3ds=true]
+
++ Request CardApproved (application/json)
+    + Body
+
+            {
+                "MD": "504",
+                "PaRes": "something"
+            }
+
++ Response 308
+    + Headers
+
+            Location: https://test.melamenu.com/cards/success?token={token}
+
++ Request CardDeclined  (application/json)
+
+    + Body
+
+            {
+                "MD": "504",
+                "PaRes": "something"
+            }
+
++ Response 308
+    + Headers
+
+            Location: https://test.melamenu.com/cards/fail
+
+
+### Fail 3ds endpoint (redirect from initial endpoint)  [GET /cards/fail]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "valid": false
+            }
+          ]
+        }
+
+### Success 3ds endpoint (redirect from initial endpoint)  [GET /cards/success?token={token}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "valid": true,
+              "token": "B4D4563622D22B2EBD10407A46AC748828CC5061FA33966"
+            }
+          ]
+        }
+
+
+### Delete old card [DELETE /cards/{id}]
+
++ Request (application/json)
+    + Body
+
+            {
+              "card_hash": "B4D4563622D22B2EBD10407A46AC748828CC5061FA339669FA5E11BE1555918EC42F7E652B6ED5159D80679B7E0B568E05EBE5D1B0138D0040A8E3A59E0BDF3D"
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+          "meta": {
+            "total": 1,
+            "count": 1,
+            "offset": 0,
+            "error": null
+          },
+          "data": [
+            {
+              "valid": true,
+              "card_hash": "B4D4563622D22B2EBD10407A46AC748828CC5061FA339669FA5E11BE1555918EC42F7E652B6ED5159D80679B7E0B568E05EBE5D1B0138D0040A8E3A59E0BDF3D"
+            }
+          ]
+        }

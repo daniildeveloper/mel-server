@@ -1,0 +1,40 @@
+{
+  "name": "melamenu-server",
+  "version": "1.1.0",
+  "description": "melamenu-server",
+  "author": "Maxim Ulyanov <maxi@maxism.ru>",
+  "main": "cluster.js",
+  "engines": {
+    "node": "7.7.0"
+  },
+  "dependencies": {
+    "apn": "^2.1.4",
+    "async": "^2.4.1",
+    "axios": "^0.16.2",
+    "bcryptjs": "^2.4.3",
+    "fxn": "git+https://github.com/maxism/fxn.git",
+    "hashids": "^1.1.1",
+    "ioredis": "^3.1.4",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
+    "newrelic": "^2.1.0",
+    "nodal": "git+https://github.com/maxism/nodal.git",
+    "node-gcm": "^0.14.5",
+    "officegen": "git+ssh://git@github.com/Ziv-Barber/officegen.git",
+    "safe-compare": "^1.0.3",
+    "telegraf": "^3.7.4",
+    "web-push": "^3.2.2"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
+  },
+  "scripts": {
+    "test": "mocha ./test/runner.js",
+    "seed": "node ./app/helpers/seed.js",
+    "bootstrap": "nodal db:prepare && nodal db:migrate && npm run seed",
+    "start": "node cluster.js",
+    "worker": "node worker.js"
+  },
+  "private": true
+}

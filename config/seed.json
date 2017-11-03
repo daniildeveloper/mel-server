@@ -1,0 +1,112 @@
+{
+
+  "development": {
+    "User": [
+      { "email": "test@me.com", "password": 12345, "is_admin": true },
+      { "email": "test2@me.com", "password": 12345, "is_admin": false }
+    ],
+
+    "Category": [
+      { "id": 1, "name": "Суши", "avatar": "http://dokonline.com/uploads/posts/2016-02/1456672033_getimage.jpg" },
+      { "id": 2, "name": "Роллы", "avatar": "http://veralline.com/uploads/images/00/00/99/2015/05/10/94dff1.jpg" },
+      { "id": 3, "name": "Гунканы", "avatar": "http://restoran420525.ru/images/yappi081922657b0f2394ea1b37ca00303524.jpg" },
+      { "id": 4, "name": "Пицца", "avatar": "http://reyhan116.ru/pizza.jpg" },
+      { "id": 5, "name": "Суши", "parent_id": 1, "avatar": "http://dokonline.com/uploads/posts/2016-02/1456672033_getimage.jpg" },
+      { "id": 6, "name": "Популярные", "parent_id": 2, "avatar": "http://dokonline.com/uploads/posts/2016-02/1456672033_getimage.jpg" },
+      { "id": 7, "name": "Запеченые", "parent_id": 2, "avatar": "http://dokonline.com/uploads/posts/2016-02/1456672033_getimage.jpg" },
+      { "id": 8, "name": "Острые", "parent_id": 2, "avatar": "http://dokonline.com/uploads/posts/2016-02/1456672033_getimage.jpg" },
+      { "id": 9, "name": "Гунканы", "parent_id": 3, "avatar": "http://dokonline.com/uploads/posts/2016-02/1456672033_getimage.jpg" },
+      { "id": 10, "name": "Пицца", "parent_id": 4, "avatar": "http://dokonline.com/uploads/posts/2016-02/1456672033_getimage.jpg" }
+    ],
+
+    "Restaurant": [
+      {
+        "name": "Великолепие суккуба",
+        "phone": "+7111111111",
+        "description": "Пуэрториканские изыски в домашней обстановке",
+        "address": "г.Москва, ул.Пуэрториканская, д. 2",
+        "website": "http://sukkub-masters.ru",
+        "admin_id": 1,
+        "city_id": 1,
+        "avatar": "1123"
+      },
+
+      {
+        "name": "Сальмонелла",
+        "phone": "+7111111111",
+        "description": "Вот уж обрадуетесь здешней кухне. Уютно, пахнет бактериями и пирожками с грибками.",
+        "address": "г.Москва, ул.Пуэрториканская, д. 2",
+        "website": "http://yandex.ru",
+        "admin_id": 2,
+        "city_id": 2,
+        "avatar": "1123"
+      }
+    ],
+
+    "RestaurantCategory": [
+      { "restaurant_id": 1, "category_id": 1 },
+      { "restaurant_id": 1, "category_id": 2 },
+      { "restaurant_id": 2, "category_id": 3 },
+      { "restaurant_id": 2, "category_id": 4 }
+    ],
+
+    "Dish": [
+      { "description": "test", "avatar": "ttt", "name": "С угрем", "category_id": 5 },
+      { "description": "test", "avatar": "ttt", "name": "С тунцом", "category_id": 5 },
+      { "description": "test", "avatar": "ttt", "name": "С лососем", "category_id": 5 },
+      { "description": "test", "avatar": "ttt", "name": "С креветкой", "category_id": 5 },
+      { "description": "test", "avatar": "ttt", "name": "С копченым лососем", "category_id": 5 },
+      { "description": "test", "avatar": "ttt", "name": "Филадельфия ", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Калифорния", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Бенито", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Инь Яна", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Канада", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Спайси", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Темпура", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Сяке маки", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Каппа маки", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Магуро маки", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Унаги маки", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Чукка маки", "category_id": 6 },
+      { "description": "test", "avatar": "ttt", "name": "Запеченный с угрем", "category_id": 7 },
+      { "description": "test", "avatar": "ttt", "name": "Запеченный с тунцом", "category_id": 7 },
+      { "description": "test", "avatar": "ttt", "name": "Запеченный с острым угрем", "category_id": 7 },
+      { "description": "test", "avatar": "ttt", "name": "Запеченный с лососем", "category_id": 7 },
+      { "description": "test", "avatar": "ttt", "name": "Запеченный с креветкой", "category_id": 7 },
+      { "description": "test", "avatar": "ttt", "name": "Запеченный с крабом", "category_id": 7 },
+      { "description": "test", "avatar": "ttt", "name": "Острый с угрем", "category_id": 8 },
+      { "description": "test", "avatar": "ttt", "name": "Острый с тунцом", "category_id": 8 },
+      { "description": "test", "avatar": "ttt", "name": "Острый с лососем", "category_id": 8 },
+      { "description": "test", "avatar": "ttt", "name": "Острый с креветкой", "category_id": 8 },
+      { "description": "test", "avatar": "ttt", "name": "Острый с крабом", "category_id": 8 },
+      { "description": "test", "avatar": "ttt", "name": "Чукка", "category_id": 3 },
+      { "description": "test", "avatar": "ttt", "name": "Филадельфия с угрем", "category_id": 9 },
+      { "description": "test", "avatar": "ttt", "name": "Филадельфия с лососем", "category_id": 9 },
+      { "description": "test", "avatar": "ttt", "name": "Тобико красный", "category_id": 9 },
+      { "description": "test", "avatar": "ttt", "name": "Тобико черный", "category_id": 9 },
+      { "description": "test", "avatar": "ttt", "name": "С икрой", "category_id": 9 },
+      { "description": "test", "avatar": "ttt", "name": "Пепперони", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "4 сезона", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Болоньезе", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Маргарита", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Вегетарианская", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Грибная", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Мясная", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Мексикана", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Сырное ассорти", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Халал", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Куриная", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Филадельфия", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Ассорти", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "С морепродуктами", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Куриная с грибами", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Охотничья", "category_id": 10 },
+      { "description": "test", "avatar": "ttt", "name": "Салями", "category_id": 10 }
+    ]
+  },
+
+  "test": {},
+
+  "production": {}
+
+}

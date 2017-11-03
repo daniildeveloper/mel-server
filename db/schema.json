@@ -1,0 +1,237 @@
+{
+
+  "migration_id": 2017092114270258,
+
+  "indices": [
+    {"table": "access_tokens", "column": "user_id"},
+    {"table": "access_tokens", "column": "expires_at"},
+    {"table": "access_tokens", "column": "access_token"},
+    {"table": "categories", "column": "name"},
+    {"table": "categories", "column": "parent_id"},
+    {"table": "cities", "column": "name"},
+    {"table": "dishes", "column": "name"},
+    {"table": "dishes", "column": "price"},
+    {"table": "dishes", "column": "category_id"},
+    {"table": "offers", "column": "amount"},
+    {"table": "offers", "column": "order_id"},
+    {"table": "offers", "column": "restaurant_id"},
+    {"table": "offers", "column": "delivery_time"},
+    {"table": "offers", "column": "delivery_date"},
+    {"table": "offers", "column": "pin_code"},
+    {"table": "offers", "column": "approved"},
+    {"table": "offers", "column": "canceled"},
+    {"table": "orders", "column": "hash"},
+    {"table": "orders", "column": "date"},
+    {"table": "orders", "column": "active"},
+    {"table": "orders", "column": "expired"},
+    {"table": "orders", "column": "city_id"},
+    {"table": "orders", "column": "delivered"},
+    {"table": "orders", "column": "push_token"},
+    {"table": "orders", "column": "categories"},
+    {"table": "orders", "column": "last_push_date"},
+    {"table": "restaurant_categories", "column": "category_id"},
+    {"table": "restaurant_categories", "column": "restaurant_id"},
+    {"table": "restaurants", "column": "city_id"},
+    {"table": "restaurants", "column": "admin_id"},
+    {"table": "restaurants", "column": "push_token"},
+    {"table": "users", "column": "email"},
+    {"table": "users", "column": "password"},
+    {"table": "users", "column": "is_admin"},
+    {"table": "users", "column": "telegram_token"},
+    {"table": "users", "column": "telegram_chat_settings"}
+  ],
+
+  "models": {
+
+    "AccessToken": {
+
+      "table": "access_tokens",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "user_id", "type": "int", "properties": {}},
+        {"name": "access_token", "type": "string", "properties": {}},
+        {"name": "token_type", "type": "string", "properties": {}},
+        {"name": "expires_at", "type": "datetime", "properties": {}},
+        {"name": "ip_address", "type": "string", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}}
+      ]
+
+    },
+
+    "Card": {
+
+      "table": "cards",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "name", "type": "text", "properties": {}},
+        {"name": "hash", "type": "text", "properties": {}},
+        {"name": "cryptogram", "type": "text", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}}
+      ]
+
+    },
+
+    "Category": {
+
+      "table": "categories",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "name", "type": "string", "properties": {}},
+        {"name": "avatar", "type": "string", "properties": {}},
+        {"name": "parent_id", "type": "int", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}}
+      ]
+
+    },
+
+    "City": {
+
+      "table": "cities",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "name", "type": "string", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}},
+        {"name": "utc_offset", "type": "int", "properties": {}}
+      ]
+
+    },
+
+    "Dish": {
+
+      "table": "dishes",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "name", "type": "string", "properties": {}},
+        {"name": "description", "type": "text", "properties": {}},
+        {"name": "avatar", "type": "string", "properties": {}},
+        {"name": "category_id", "type": "int", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}},
+        {"name": "price", "type": "int", "properties": {}}
+      ]
+
+    },
+
+    "Offer": {
+
+      "table": "offers",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "restaurant_id", "type": "int", "properties": {}},
+        {"name": "order_id", "type": "int", "properties": {}},
+        {"name": "amount", "type": "float", "properties": {}},
+        {"name": "delivery_time", "type": "time", "properties": {}},
+        {"name": "delivery_date", "type": "datetime", "properties": {}},
+        {"name": "comment", "type": "text", "properties": {}},
+        {"name": "pin_code", "type": "string", "properties": {}},
+        {"name": "approved", "type": "boolean", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}},
+        {"name": "total", "type": "float", "properties": {}},
+        {"name": "discount", "type": "float", "properties": {}},
+        {"name": "canceled", "type": "boolean", "properties": {}},
+        {"name": "approved_at", "type": "datetime", "properties": {}},
+        {"name": "withdrew", "type": "boolean", "properties": {}}
+      ]
+
+    },
+
+    "Order": {
+
+      "table": "orders",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "hash", "type": "string", "properties": {"nullable":false,"unique":true}},
+        {"name": "client_name", "type": "string", "properties": {}},
+        {"name": "client_phone", "type": "string", "properties": {}},
+        {"name": "client_address", "type": "string", "properties": {"nullable":false}},
+        {"name": "client_order", "type": "json", "properties": {}},
+        {"name": "comment", "type": "text", "properties": {}},
+        {"name": "date", "type": "datetime", "properties": {}},
+        {"name": "categories", "type": "int", "properties": {"nullable":false,"array":true}},
+        {"name": "active", "type": "boolean", "properties": {"nullable":false}},
+        {"name": "delivered", "type": "boolean", "properties": {"nullable":false}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}},
+        {"name": "push_token", "type": "string", "properties": {}},
+        {"name": "expired", "type": "boolean", "properties": {"defaultValue":"false"}},
+        {"name": "last_push_date", "type": "datetime", "properties": {}},
+        {"name": "city_id", "type": "int", "properties": {}},
+        {"name": "payment_method", "type": "string", "properties": {}},
+        {"name": "card_hash", "type": "string", "properties": {}},
+        {"name": "transaction_id", "type": "int", "properties": {}}
+      ]
+
+    },
+
+    "Restaurant": {
+
+      "table": "restaurants",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "name", "type": "string", "properties": {}},
+        {"name": "phone", "type": "string", "properties": {}},
+        {"name": "description", "type": "text", "properties": {}},
+        {"name": "address", "type": "string", "properties": {}},
+        {"name": "website", "type": "string", "properties": {}},
+        {"name": "admin_id", "type": "int", "properties": {}},
+        {"name": "avatar", "type": "string", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}},
+        {"name": "push_token", "type": "string", "properties": {}},
+        {"name": "facebook", "type": "string", "properties": {}},
+        {"name": "instagram", "type": "string", "properties": {}},
+        {"name": "city_id", "type": "int", "properties": {}},
+        {"name": "bill", "type": "float", "properties": {}},
+        {"name": "cloudpayments_id", "type": "string", "properties": {}},
+        {"name": "cloudpayments_password", "type": "string", "properties": {}}
+      ]
+
+    },
+
+    "RestaurantCategory": {
+
+      "table": "restaurant_categories",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "restaurant_id", "type": "int", "properties": {}},
+        {"name": "category_id", "type": "int", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}}
+      ]
+
+    },
+
+    "User": {
+
+      "table": "users",
+
+      "columns": [
+        {"name": "id", "type": "serial", "properties": {"nullable":false,"primary_key":true,"auto_increment":true}},
+        {"name": "email", "type": "string", "properties": {"unique":true}},
+        {"name": "password", "type": "string", "properties": {}},
+        {"name": "is_admin", "type": "boolean", "properties": {}},
+        {"name": "created_at", "type": "datetime", "properties": {}},
+        {"name": "updated_at", "type": "datetime", "properties": {}},
+        {"name": "telegram_chat_settings", "type": "json", "properties": {}},
+        {"name": "telegram_token", "type": "string", "properties": {"array":true}}
+      ]
+
+    }
+
+  }
+
+}
